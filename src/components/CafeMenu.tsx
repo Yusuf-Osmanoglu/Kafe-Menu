@@ -138,8 +138,8 @@ const Header: React.FC<HeaderProps> = ({ onBackClick, onSearchToggle, isSearchAc
           </button>
         </div>
       </div>
-      <div className={`flex items-center absolute right-4 transition-all duration-300 ${isSearchActive ? 'opacity-100 w-full md:w-96' : 'opacity-0 w-0'}`}>
-        <div className="relative w-full">
+      <div className={`flex items-center absolute inset-x-4 md:right-4 md:left-auto overflow-hidden transition-all duration-300 ${isSearchActive ? 'opacity-100 w-auto md:w-96' : 'opacity-0 w-0'}`}>
+        <div className="relative w-full max-w-full">
           <FaSearch className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600" />
           <input
             type="text"
@@ -609,7 +609,7 @@ const CafeMenu = () => {
   };
 
   return (
-    <div className={`${geistSans.className} ${geistMono.className} min-h-screen bg-gray-50 font-sans flex flex-col`}>
+    <div className={`${geistSans.className} ${geistMono.className} min-h-screen bg-gray-50 font-sans flex flex-col overflow-x-hidden`}>
       <Header 
         onBackClick={handleBackToMain}
         onSearchToggle={handleSearchToggle}

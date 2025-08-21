@@ -24,3 +24,14 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Prevent horizontal scrollbars on small screens */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Ensure media doesn't overflow containers */
+img, video {
+  max-width: 100%;
+  height: auto;
+}

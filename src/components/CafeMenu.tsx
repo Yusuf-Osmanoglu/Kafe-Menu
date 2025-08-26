@@ -108,7 +108,7 @@ const Header: React.FC<HeaderProps> = ({ onBackClick, onSearchToggle, isSearchAc
           className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors cursor-pointer absolute left-1/2 -translate-x-1/2"
           onClick={onBackClick}
         >
-          Kule Menü
+          Kafe Menü
         </h1>
         <button 
           onClick={onSearchToggle} 
@@ -122,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ onBackClick, onSearchToggle, isSearchAc
           className="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors cursor-pointer"
           onClick={onBackClick}
         >
-          Kule Menü
+          Kafe Menü
         </h1>
         <div className="flex items-center space-x-6">
           <nav className="flex items-center space-x-6 text-gray-600 font-medium">
@@ -195,7 +195,7 @@ const Footer = () => (
         <a href="#" className="hover:underline">Yusuf Osmanoğlu</a>
         <a href="#" className="hover:underline">yusufosmanoglu2003@gmail.com</a>
       </div>
-      <p className="text-sm">@2025 Kule Menü. Tüm Hakları Saklıdır.</p>
+      <p className="text-sm">@2025 Kafe Menü. Tüm Hakları Saklıdır.</p>
     </div>
   </footer>
 );
@@ -323,30 +323,30 @@ const AboutUs = () => (
     
     <div className="prose max-w-none text-gray-700">
       <p className="mb-4">
-        Kule Kafe&apos;e hoş geldiniz, şehir merkezinin kalbinde yer alan şirin bir kafe. 2015 yılında kapılarımızı açtığımızdan beri, sıcak ve davetkar bir atmosferde en kaliteli kahveyi, lezzetli hamur işlerini ve doyurucu yemekleri sunmaya kendimizi adadık. Misyonumuz, topluluğun bir araya gelip bağlantı kurabildiği ve kaliteli yiyecek ve içeceklerin tadını çıkarabileceği bir alan yaratmaktır.
+        Kafe Kafe&apos;e hoş geldiniz, şehir merkezinin kalbinde yer alan şirin bir kafe. 2015 yılında kapılarımızı açtığımızdan beri, sıcak ve davetkar bir atmosferde en kaliteli kahveyi, lezzetli hamur işlerini ve doyurucu yemekleri sunmaya kendimizi adadık. Misyonumuz, topluluğun bir araya gelip bağlantı kurabildiği ve kaliteli yiyecek ve içeceklerin tadını çıkarabileceği bir alan yaratmaktır.
       </p>
       
       <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Hikayemiz</h2>
       <p className="mb-4">
-        Kule Kafe, ikinci evi gibi hissedilen bir kafe açma hayali olan tutkulu bir barista olan X tarafından kuruldu. Küçük bir mekan ve büyük bir tutkuyla başladığımız yolculuğumuzda, samimi hizmetimiz ve olağanüstü ürünlerimizle sevilen bir yerel mekan haline geldik. Kahve çekirdeklerimizi yerel kavuruculardan temin ediyor ve tüm yemeklerimizde taze, yüksek kaliteli malzemeler kullanıyoruz.
+        Kafe Kafe, ikinci evi gibi hissedilen bir kafe açma hayali olan tutkulu bir barista olan X tarafından kuruldu. Küçük bir mekan ve büyük bir tutkuyla başladığımız yolculuğumuzda, samimi hizmetimiz ve olağanüstü ürünlerimizle sevilen bir yerel mekan haline geldik. Kahve çekirdeklerimizi yerel kavuruculardan temin ediyor ve tüm yemeklerimizde taze, yüksek kaliteli malzemeler kullanıyoruz.
       </p>
       
       <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Bize Ulaşın</h2>
       <p className="mb-2">
-        Email: <a href="mailto:info@thedailygrind.com" className="text-blue-600 hover:underline">info@KuleKafe.com</a>
+        Email: <a href="mailto:info@thedailygrind.com" className="text-blue-600 hover:underline">info@Kafe.com</a>
       </p>
       <p className="mb-2">
         Telefon: (555) 123-4567
       </p>
       <p>
-        Adres: Kuş Gözlem, Sarıyer, İstanbul
+        Adres: Sarıyer, İstanbul
       </p>
 
       <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">Saatler</h2>
       <ul className="list-disc list-inside space-y-1">
-        <li>Hafta İçi - Friday: 7 AM - 7 PM</li>
-        <li>Cumartesi: 8 AM - 8 PM</li>
-        <li>Pazar: 9 AM - 5 PM</li>
+        <li>Hafta İçi: 7:00  - 21:00</li>
+        <li>Cumartesi: 10:00 - 21:00</li>
+        <li>Pazar: 10:00 - 20:00</li>
       </ul>
     </div>
   </div>

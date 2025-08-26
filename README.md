@@ -2,39 +2,106 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 ## Getting Started
 
-First, run the development server:
+# QR Menü
+
+Kafe/Restoran menünüzü QR kod üzerinden müşterilere sunabileceğiniz, Google Sheets ile içerik yönetimi yapılan, mobil uyumlu bir Next.js uygulaması.
+
+Ana bileşen: `src/components/CafeMenu.tsx`
+
+Uygulama, ürünleri Google Sheets'ten çeker, kategori/alt kategori yapısında listeler, arama yapmanıza ve ürün detaylarını modal pencerede görüntülemenize izin verir.
+
+## Özellikler
+
+- __Google Sheets entegrasyonu__: Ürün verileri (title, category, name, description, imageUrl, price, oldPrice) Google Sheets üzerinden yönetilir ve `/api/sheets` ile çekilir.
+- __Kategori ve alt kategoriler__: Menü, ana kategori ve alt kategoriler halinde dinamik olarak oluşturulur.
+- __Hızlı arama__: İsim, açıklama, kategori veya başlık üzerinden anlık arama.
+- __Ürün detay modalı__: Ürün görseli, açıklaması ve fiyat bilgileri ile modal görüntüleme.
+- __Mobil uyumlu tasarım__: Telefon ve tabletlerde akıcı deneyim.
+- __Görsel optimizasyonu ve proxy__: Google Drive/Googleusercontent görselleri için `next/image` remotePatterns ve `/api/proxy-image` üzerinden proxy desteği.
+- __Modern teknoloji yığını__: Next.js 15, React 19, Tailwind CSS v4.
+
+## Kurulum
+
+Önkoşullar:
+
+- Node.js 18+ (önerilen LTS)
+- npm (veya pnpm/yarn/bun)
+
+Bağımlılıkları yükleyin:
+
+```bash
+npm install
+```
+
+Geliştirme sunucusunu başlatın:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Tarayıcıdan şu adresi açın: http://localhost:3000
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+Prodüksiyon derlemesi ve çalıştırma:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```bash
+npm run build
+npm start
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Google Sheets Yapılandırması
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Proje kökünde `credentials.json` dosyası bulunur (Google API kimlik doğrulama bilgileri). Aşağıdaki genel adımlar izlenir:
 
-## Learn More
+1. __Google Cloud Projesi__: Google Cloud Console'da bir proje oluşturun. Google Sheets API (gerekirse Google Drive API) etkinleştirin.
+2. __Kimlik bilgileri__: OAuth istemci veya servis hesabı kimlik bilgileri oluşturun. İndirilen `credentials.json` dosyasını proje köküne koyun.
+3. __Sheet yapısı__: Aşağıdaki alanlara sahip bir çalışma sayfası hazırlayın: `title`, `category`, `name`, `description`, `imageUrl`, `price`, `oldPrice`.
+4. __Erişim__: Uygulamanın kullandığı hesap/sunum şekline göre Sheet'i ilgili hesapla paylaşın veya herkese açık görüntülemeye ayarlayın.
+5. __Görseller__: Görselleri doğrudan URL olarak `imageUrl` alanına koyun. Google Drive/Docs/Googleusercontent bağlantıları desteklenir; Next.js `next.config.*` içinde ilgili domainler yetkilidir ve `/api/proxy-image` ile proxylenir.
 
-To learn more about Next.js, take a look at the following resources:
+Not: API uç noktaları `src/pages/api/` altında tanımlanır. Bu projede istemci tarafında `axios` ile `/api/sheets` çağrılır. Kendi sayfanıza göre kimlik doğrulama/okuma mantığını düzenleyin.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+## Komutlar
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`package.json` script'leri:
 
-## Deploy on Vercel
+- `npm run dev` — Geliştirme (Turbopack)
+- `npm run build` — Üretim derlemesi (Turbopack)
+- `npm start` — Sunucu başlatma
+- `npm run lint` — ESLint
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Proje Yapısı (özet)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+- `src/pages/index.tsx` — Giriş sayfası, `CafeMenu` bileşenini render eder.
+- `src/components/CafeMenu.tsx` — Tüm menü akışı, arama, modal, kategori gezinmesi.
+- `src/pages/_app.tsx` — Global stiller (`src/styles/globals.css`).
+- `src/pages/_document.tsx` — HTML iskeleti.
+- `src/pages/api/*` — API route'ları (ör. `/api/sheets`, `/api/proxy-image`).
+- `next.config.mjs` — `next/image` domain izinleri ve ayarlar.
+- `credentials.json` — Google API kimlik bilgileri.
+
+## Teknolojiler
+
+- Next.js 15, React 19, TypeScript
+- Tailwind CSS v4
+- Axios
+- Google Sheets/Drive API (`googleapis`, `google-spreadsheet`, `@google-cloud/local-auth`)
+
+## Dağıtım
+
+Vercel önerilir:
+
+1. Depoyu Vercel'e bağlayın.
+2. Node 18+ ortamı kullanın.
+3. Gerekli ise `credentials.json` yerine ortam değişkenleri veya Vercel Secrets kullanarak kimlik bilgilerini yönetin.
+
+Alternatif olarak kendi sunucunuzda `npm run build && npm start` ile çalıştırabilirsiniz.
+
+## İletişim
+
+Geliştirici: `Yusuf Osmanoğlu`
+
+E-posta: `yusufosmanoglu2003@gmail.com`
+
+## Lisans
+
+Lisans bilgisi belirtilmemiştir. Kullanım koşullarını belirlemek için bir lisans dosyası (`LICENSE`) eklemeniz önerilir.

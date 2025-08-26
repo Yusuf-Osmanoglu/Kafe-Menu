@@ -62,7 +62,7 @@ Not: API uç noktaları `src/pages/api/` altında tanımlanır. Bu projede istem
 
 ## Teknolojiler
 
-- Next.js 15, React 19, TypeScript
+- Next.js 15, TypeScript
 - Tailwind CSS v4
 - Axios
 - Google Sheets/Drive API (`googleapis`, `google-spreadsheet`, `@google-cloud/local-auth`)

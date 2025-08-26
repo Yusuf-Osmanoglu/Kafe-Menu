@@ -60,25 +60,6 @@ Proje kökünde `credentials.json` dosyası bulunur (Google API kimlik doğrulam
 
 Not: API uç noktaları `src/pages/api/` altında tanımlanır. Bu projede istemci tarafında `axios` ile `/api/sheets` çağrılır. Kendi sayfanıza göre kimlik doğrulama/okuma mantığını düzenleyin.
 
-## Komutlar
-
-`package.json` script'leri:
-
-- `npm run dev` — Geliştirme (Turbopack)
-- `npm run build` — Üretim derlemesi (Turbopack)
-- `npm start` — Sunucu başlatma
-- `npm run lint` — ESLint
-
-## Proje Yapısı (özet)
-
-- `src/pages/index.tsx` — Giriş sayfası, `CafeMenu` bileşenini render eder.
-- `src/components/CafeMenu.tsx` — Tüm menü akışı, arama, modal, kategori gezinmesi.
-- `src/pages/_app.tsx` — Global stiller (`src/styles/globals.css`).
-- `src/pages/_document.tsx` — HTML iskeleti.
-- `src/pages/api/*` — API route'ları (ör. `/api/sheets`, `/api/proxy-image`).
-- `next.config.mjs` — `next/image` domain izinleri ve ayarlar.
-- `credentials.json` — Google API kimlik bilgileri.
-
 ## Teknolojiler
 
 - Next.js 15, React 19, TypeScript
@@ -105,3 +86,25 @@ E-posta: `yusufosmanoglu2003@gmail.com`
 ## Lisans
 
 Lisans bilgisi belirtilmemiştir. Kullanım koşullarını belirlemek için bir lisans dosyası (`LICENSE`) eklemeniz önerilir.
+
+## Ekran Görüntüleri
+  
+Aşağıda uygulamadan bazı ekran görüntüleri yer almaktadır:
+  
+![Ekran görüntüsü 2025-07-09 171353](Ekran görüntüsü 2025-07-09 171353.png)
+  
+![Ekran görüntüsü 2025-08-26 092406](Ekran görüntüsü 2025-08-26 092406.png)
+  
+![Ekran görüntüsü 2025-08-26 092433](Ekran görüntüsü 2025-08-26 092433.png)
+  
+![Ekran görüntüsü 2025-08-26 092501](Ekran görüntüsü 2025-08-26 092501.png)
+  
+![Ekran görüntüsü 2025-08-26 092648](Ekran görüntüsü 2025-08-26 092648.png)
+  
+![Ekran görüntüsü 2025-08-26 092806](Ekran görüntüsü 2025-08-26 092806.png)
+  
+![Ekran görüntüsü 2025-08-26 092915](Ekran görüntüsü 2025-08-26 092915.png)
+  
+![Ekran görüntüsü 2025-08-26 093015](Ekran görüntüsü 2025-08-26 093015.png)
+  
+![Ekran görüntüsü 2025-08-26 093039](Ekran görüntüsü 2025-08-26 093039.png)

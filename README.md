@@ -18,7 +18,7 @@ Uygulama, ürünleri Google Sheets'ten çeker, kategori/alt kategori yapısında
 - __Ürün detay modalı__: Ürün görseli, açıklaması ve fiyat bilgileri ile modal görüntüleme.
 - __Mobil uyumlu tasarım__: Telefon ve tabletlerde akıcı deneyim.
 - __Görsel optimizasyonu ve proxy__: Google Drive/Googleusercontent görselleri için `next/image` remotePatterns ve `/api/proxy-image` üzerinden proxy desteği.
-- __Modern teknoloji yığını__: Next.js 15, React 19, Tailwind CSS v4.
+- __Modern teknoloji yığını__: Next.js 15, Tailwind CSS v4.
 
 ## Kurulum
 

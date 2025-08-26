@@ -83,10 +83,6 @@ Geliştirici: `Yusuf Osmanoğlu`
 
 E-posta: `yusufosmanoglu2003@gmail.com`
 
-## Lisans
-
-Lisans bilgisi belirtilmemiştir. Kullanım koşullarını belirlemek için bir lisans dosyası (`LICENSE`) eklemeniz önerilir.
-
 ## Ekran Görüntüleri
   
 Aşağıda uygulamadan bazı ekran görüntüleri yer almaktadır:
